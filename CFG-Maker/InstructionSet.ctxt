@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=InstructionSet()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ InstructionSet\r\n
+comment1.params=ins
+comment1.target=void\ add(Instruction)
+comment1.text=\r\n\ Add\ an\ instruction\r\n\ \r\n\ @param\ \ Instruction\ ins\ the\ instruction\r\n
+comment2.params=opcode
+comment2.target=java.lang.String\ getNameFromOpcode(int)
+comment2.text=\r\n\ Given\ an\ opcode,\ gets\ the\ name\r\n\ \r\n\ @param\ opcode\ the\ opcode\r\n\ @return\ name\ the\ name\r\n
+comment3.params=opcode
+comment3.target=AbstractInstruction\ getAbstractSyntaxFromOP(int)
+comment3.text=\r\n\ Given\ the\ opcode,\ gets\ the\ abstract\ form\r\n\ \r\n\ @param\ the\ opcode\r\n\ @return\ AbstractInstruction\r\n
+numComments=4

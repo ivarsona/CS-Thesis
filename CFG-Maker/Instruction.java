@@ -38,7 +38,6 @@ public class Instruction
      */
     public int getOP()
     {
-        // put your code here
         return opcode;
     }
     
