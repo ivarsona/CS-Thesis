@@ -1,10 +1,13 @@
-
+import java.nio.file.*;
+import java.util.*;
 /**
  * Given a file, gives back an InstructionSet object
  * 
  * @author Drew Ivarson 
  * @version 2/8/2015
  */
+
+
 public class InstructionSetParser
 {
     /**
@@ -15,6 +18,52 @@ public class InstructionSetParser
      */
     public static InstructionSet parseInstructionSet(String filename)
     {
-        return null;
+       InstructionSet ins = new InstructionSet();
+       ArrayList<String> file = new ArrayList<String>();
+       Path path = FileSystems.getDefault().getPath(filename);
+       try
+       {
+             file = (ArrayList) Files.readAllLines(path);
+       }
+       catch (Exception e)
+       {
+             System.out.println("File reader error");
+       }
+       
+       for (int i = 0; i < file.size(); i++)
+       {
+           int opcode;
+           int numBytes;
+           String name;
+           AbstractInstruction abs;
+           
+           String line = file.get(i);
+           opcode = Integer.parseInt(line.substring(0, line.indexOf(" ")));
+           line = line.substring(line.indexOf(" "), line.length());
+           numBytes = Integer.parseInt(line.substring(0, line.indexOf(" ")));
+           line = line.substring(line.indexOf(" "), line.length());
+           name = line.substring(0, line.indexOf(" "));
+           line = line.substring(line.indexOf(" "), line.length());
+           String absStr = line.substring(0, line.indexOf(" "));
+           
+           if (absStr.equals("WRITECONST"))
+               abs = AbstractInstruction.WRITECONST;
+           else if (absStr.equals("WRITEREL"))
+               abs = AbstractInstruction.WRITEREL;
+           else if (absStr.equals("GOTOCONST"))
+               abs = AbstractInstruction.GOTOCONST;
+           else if (absStr.equals("GOTOREL"))
+               abs = AbstractInstruction.GOTOREL;
+           else if (absStr.equals("SKIPORGOTOCONST"))
+               abs = AbstractInstruction.SKIPORGOTOCONST;
+           else if (absStr.equals("SKIPORGOTOREL"))
+               abs = AbstractInstruction.SKIPORGOTOREL;
+           else
+               abs = AbstractInstruction.SKIP;
+               
+           ins.add(new Instruction(opcode, numBytes, name, abs));
+       }
+       
+       return ins;
     }
 }

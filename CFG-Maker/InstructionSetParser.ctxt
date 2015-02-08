@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=filename
+comment0.target=InstructionSet\ parseInstructionSet(java.lang.String)
+comment0.text=\r\n\ Given\ a\ file,\ returns\ an\ instruction\ set\r\n\ \r\n\ @param\ \ filename\ \ \ the\ name\ of\ the\ file\r\n\ @return\ \ \ \ \ the\ instrucion\ set\ described\ by\ the\ file\ \r\n
+numComments=1
