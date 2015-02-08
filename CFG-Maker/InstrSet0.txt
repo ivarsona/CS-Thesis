@@ -1,0 +1,4 @@
+opcode	#bytes	name	semantics	EG
+00	3	MOVB	write constVal to constAddr	MOVB 0c 01
+01	2	INC	skip	INC %eax
+02	2	JMP	GOTO constAddr	JMP 02

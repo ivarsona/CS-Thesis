@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=op\ numBytes\ name\ absIns
+comment0.target=Instruction(int,\ int,\ java.lang.String,\ AbstractInstruction)
+comment0.text=\r\n\ @param\ op\ opcode\r\n\ @param\ numBytes\ number\ of\ bytes\r\n\ @param\ name\ the\ name\r\n\ @param\ absIns\ the\ abstract\ instruction\r\n
+comment1.params=
+comment1.target=int\ getOP()
+comment1.text=\r\n\ Gets\ the\ opcode\r\n\ \r\n\ @return\ \ opcode\ the\ opcode\r\n
+comment2.params=
+comment2.target=int\ getNumBytes()
+comment2.text=\r\n\ Gets\ the\ number\ of\ bytes\r\n\ \r\n\ @return\ int\ number\ of\ bytes\r\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\r\n\ Gets\ the\ name\r\n\ \r\n\ @return\ the\ name\r\n
+comment4.params=
+comment4.target=AbstractInstruction\ getAbsSyntax()
+comment4.text=\r\n\ Gets\ the\ abstract\ syntax\r\n\ \r\n\ @return\ the\ AbstractInstruction\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\r\n\ ToString\ in\ the\ form\ of\:\r\n\ name\:\ NAME,\ opcode\:\ xx,\ number\ of\ bytes\:\ x,\ Abstract\ Syntax\:\ absSyntax\r\n
+numComments=6
