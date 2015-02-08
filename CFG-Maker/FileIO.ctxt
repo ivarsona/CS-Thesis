@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=name
+comment0.target=FileIO(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ FileIO\r\n
+comment1.params=
+comment1.target=java.util.List\ getFileDump()
+numComments=2

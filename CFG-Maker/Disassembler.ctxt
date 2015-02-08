@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=hexDump
+comment0.target=java.util.List\ DisAsmFromHexDump(java.lang.String)
+comment1.params=fileDump
+comment1.target=java.util.List\ DisAsmFromStrList(java.util.List)
+comment2.params=ins
+comment2.target=java.lang.String\ getRegName(java.lang.String)
+comment3.params=op
+comment3.target=boolean\ isRegOP(java.lang.String)
+comment4.params=ins
+comment4.target=java.lang.String\ getOPCode(java.lang.String)
+numComments=5
