@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=p\ inSet
+comment0.target=void\ calcByteVals(Program,\ InstructionSet)
+comment0.text=\r\n\ Fills\ in\ CodeBytes\ of\ program\ p\ by\ searching\ for\ rewrites\r\n\ \r\n\ @param\ \ p\ the\ Program\r\n\ @param\ inSet\ the\ instruction\ set\r\n
+numComments=1

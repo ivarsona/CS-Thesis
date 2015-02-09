@@ -37,6 +37,12 @@ public class main
               {
                   Program p = InputParser.parseProgram(name);
                   System.out.println(p); 
+                  
+                  AMBAlgorithm.calcByteVals(p, inSet);
+                  System.out.println(p);
+                  
+                  
+                  
                   System.out.print("Enter file name, new to change instruction sets, or quit to quit: ");
                   name = sc.nextLine();
                   System.out.println();
