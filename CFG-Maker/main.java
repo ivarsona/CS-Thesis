@@ -13,19 +13,34 @@ public class main
     {
            Scanner sc = new Scanner(System.in);
            String name = "blahhhh";
-           System.out.print("Enter file name, or quit to quit: ");
-           
+           System.out.println("Welcome to the CFG Maker (someday...)");
+           System.out.println("The current instruction set is:\n\n");
+           InstructionSet inSet = InstructionSetParser.parseInstructionSet("InstrSet0.txt");
+           System.out.println("\n\n");
+           System.out.print("Enter file name, new to change instruction sets, or quit to quit: ");
+           //System.out.println(inSet);
            name = sc.nextLine();
            System.out.println();
            while (!name.equals("quit"))
            {
-              Program p = InputParser.parseProgram(name);
-              System.out.println(p); 
-               
-               
-               
-              System.out.print("Enter file name, or quit to quit: ");
-              name = sc.nextLine();
+              if (name.equals("new"))
+              {
+                  System.out.print("Enter new instruction set name,\nor nothing if you don't want to change: ");
+                  name = sc.nextLine();
+                  inSet = InstructionSetParser.parseInstructionSet(name);
+                  System.out.println(inSet);
+                  System.out.print("Enter file name, new to change instruction sets, or quit to quit: ");
+                  name = sc.nextLine();
+                  System.out.println();
+              }
+              else
+              {
+                  Program p = InputParser.parseProgram(name);
+                  System.out.println(p); 
+                  System.out.print("Enter file name, new to change instruction sets, or quit to quit: ");
+                  name = sc.nextLine();
+                  System.out.println();
+              }
            }
     }
 }

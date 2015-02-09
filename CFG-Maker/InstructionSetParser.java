@@ -32,6 +32,7 @@ public class InstructionSetParser
        
        for (int i = 0; i < file.size(); i++)
        {
+           System.out.println(file.get(i));
            int opcode;
            int numBytes;
            String name;
@@ -39,12 +40,12 @@ public class InstructionSetParser
            
            String line = file.get(i);
            opcode = Integer.parseInt(line.substring(0, line.indexOf(" ")), 16);
-           line = line.substring(line.indexOf(" "), line.length());
+           line = line.substring(line.indexOf(" ") + 1, line.length());
            numBytes = Integer.parseInt(line.substring(0, line.indexOf(" ")));
-           line = line.substring(line.indexOf(" "), line.length());
+           line = line.substring(line.indexOf(" ") + 1, line.length());
            name = line.substring(0, line.indexOf(" "));
-           line = line.substring(line.indexOf(" "), line.length());
-           String absStr = line.substring(0, line.indexOf(" "));
+           line = line.substring(line.indexOf(" ") + 1, line.length());
+           String absStr = line.substring(0, line.length());
            
            if (absStr.equals("WRITECONST"))
                abs = AbstractInstruction.WRITECONST;
