@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=base\ ins
+comment0.target=InstructionByte(int,\ ConcIns)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ InstructionByte\r\n\ \r\n\ @param\ base\ the\ base\ address\r\n
+comment1.params=base
+comment1.target=InstructionByte(int)
+comment2.params=ins
+comment2.target=void\ addInstruction(ConcIns)
+comment2.text=\r\n\ Add\ an\ instruction\ to\ the\ set\ of\ instructions\r\n\ \r\n\ @param\ \ ins\ the\ new\ instruction\r\n
+comment3.params=
+comment3.target=java.util.ArrayList\ getInstructions()
+comment3.text=\r\n\ Gets\ the\ list\ of\ instructions\r\n\ \r\n\ @return\ the\ list\ of\ instructions\r\n
+comment4.params=
+comment4.target=int\ getAddress()
+comment4.text=\r\n\ Gets\ the\ base\ address\r\n\ \r\n\ @return\ the\ address\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

@@ -15,15 +15,20 @@ public class ConcIns
     /**
      * Constructor for objects of class ConcIns
      */
-    public ConcIns(int op, ArrayList<Integer> dataStuff, String dis)
+    public ConcIns(int op, ArrayList<Integer> dataStuff)
     {
         opcode = op;
         data = dataStuff;
+        
+    }
+    
+    public void addDisasm(String dis)
+    {
         disassembly = dis;
     }
     
     public String toString()
     {
-        return disassembly;
+        return opcode + " " + data;
     }
 }

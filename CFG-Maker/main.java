@@ -40,7 +40,7 @@ public class main
                   
                   System.out.println("---Calculating CodeByte Variants---\n\n");
                   AMBAlgorithm.calcByteVals(p, inSet);
-                  
+                  ArrayList<InstructionByte> instr = AMBAlgorithm.recAlgorithm(p, inSet);
                   System.out.println("---CodeByte Variants:\n");
                   System.out.println(p);
                   

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class CodeByte
 {
+    private boolean visited;
     private int address;
     private ArrayList<Integer> values;
 
@@ -15,11 +16,26 @@ public class CodeByte
      */
     public CodeByte(int add, int val)
     {
+        visited = false;
         address = add;
         values = new ArrayList<Integer>();
         values.add(val);
     }
 
+    public void markVisited()
+    {
+        visited = true;
+    }
+    
+    public void markUnvisited()
+    {
+        visited = false;
+    }
+    
+    public boolean visisted()
+    {
+        return visited;
+    }
     public void addValue(int val)
     {
         if (!values.contains(val))
