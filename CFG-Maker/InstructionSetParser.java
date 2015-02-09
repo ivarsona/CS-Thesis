@@ -38,7 +38,7 @@ public class InstructionSetParser
            AbstractInstruction abs;
            
            String line = file.get(i);
-           opcode = Integer.parseInt(line.substring(0, line.indexOf(" ")));
+           opcode = Integer.parseInt(line.substring(0, line.indexOf(" ")), 16);
            line = line.substring(line.indexOf(" "), line.length());
            numBytes = Integer.parseInt(line.substring(0, line.indexOf(" ")));
            line = line.substring(line.indexOf(" "), line.length());

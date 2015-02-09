@@ -32,6 +32,28 @@ public class InstructionSet
     }
     
     /**
+     * Given the opcode, gets the number of bytes
+     * 
+     * @param opcode
+     * @return numBytes
+     */
+    public int getNumBytesFromOpcode(int opcode)
+    {
+        if (instructions.isEmpty())
+            return 0;
+        else
+        {
+            for (int i = 0; i < instructions.size(); i++)
+            {
+                if (instructions.get(i).getOP() == opcode)
+                    return instructions.get(i).getNumBytes();
+            }
+            
+            return 0;
+        }
+    }
+    
+    /**
      * Given an opcode, gets the name
      * 
      * @param opcode the opcode
@@ -77,5 +99,16 @@ public class InstructionSet
         }
         
         return AbstractInstruction.SKIP;
+    }
+    
+    public String toString()
+    {
+        String toRet = "";
+        for (int i = 0; i < instructions.size(); i++)
+        {
+            toRet += instructions.get(i).toString();
+            toRet += "\n";
+        }
+        return toRet;
     }
 }

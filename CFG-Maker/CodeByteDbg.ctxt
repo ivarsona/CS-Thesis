@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=addr\ ins\ disasm\ op
+comment0.target=CodeByteDbg(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CodeByte\r\n
+comment1.params=
+comment1.target=void\ markAsVisited()
+comment2.params=
+comment2.target=void\ markAsUnvisited()
+comment3.params=
+comment3.target=boolean\ isVisited()
+comment4.params=
+comment4.target=java.lang.String\ getAddress()
+comment5.params=
+comment5.target=java.lang.String\ getInstruction()
+comment6.params=
+comment6.target=java.lang.String\ getDisasm()
+comment7.params=
+comment7.target=boolean\ isMovOP()
+comment8.params=
+comment8.target=boolean\ isJMPOP()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

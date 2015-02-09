@@ -1,89 +1,40 @@
+import java.util.ArrayList;
 /**
- * Write a description of class CodeByte here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Contains an address and list of possible values
+ *
+ * @author Drew Ivarson
+ * @version 2/8/2015
  */
 public class CodeByte
 {
-    private String address;
-    private String instruction;
-    private String disassembly;
-    private String opcode;
-    private boolean visited;
+    private int address;
+    private ArrayList<Integer> values;
 
     /**
-     * Constructor for objects of class CodeByte
+     * Constructor for objects of class CodeBytes
      */
-    public CodeByte(String addr, String ins, String disasm, String op)
+    public CodeByte(int add, int val)
     {
-        // initialise instance variables
-        address = addr;
-        instruction = ins;
-        disassembly = disasm;
-        opcode = op;
-        try
-        {
-            opcode = instruction.substring(0, instruction.indexOf(" "));
-        }
-        catch (Exception e)
-        {
-            System.out.println("Invalid instruction: " + ins);
-        }
-        visited = false;
-    }
-    
-    public void markAsVisited()
-    {
-        visited = true;
-    }
-    
-    public void markAsUnvisited()
-    {
-        visited = false;
-    }
-    
-    public boolean isVisited()
-    {
-        return visited;
+        address = add;
+        values = new ArrayList<Integer>();
+        values.add(val);
     }
 
-    public String getAddress()
+    public void addValue(int val)
     {
-        return address;
-    }
-    
-    public String getInstruction()
-    {
-        return instruction;
-    }
-    
-    public String getDisasm()
-    {
-        return disassembly;
-    }
-    
-    public boolean isMovOP()
-    {
-        if (opcode.equals(Disassembler.MOVOP))
-            return true;
+        if (!values.contains(val))
+            values.add(val);
         else
-            return false;
+            return;
+        
     }
-    
-    public boolean isJMPOP()
+    /**
+     * Getter method for a codebyte, gives the list of values
+     * 
+     * @return  values  ArrayList<Integer> of values 
+     */
+    public ArrayList<Integer> getValues()
     {
-        if (opcode.equals(Disassembler.JUMPOP))
-            return true;
-        else
-            return false;
-    }
-    
-    public String toString()
-    {
-        return "Address: " + address 
-            + "\nInstruction: " + instruction 
-            + "\nDisassembly: " + disassembly
-            + "\nVisited: " + visited + "\n";
+       return values;
     }
 }
