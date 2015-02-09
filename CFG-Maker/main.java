@@ -19,13 +19,13 @@ public class main
            System.out.println();
            while (!name.equals("quit"))
            {
-               Program p = InputParser.parseProgram(name);
+              Program p = InputParser.parseProgram(name);
+              System.out.println(p); 
                
                
                
-               
-               System.out.print("Enter file name, or quit to quit: ");
-               name = sc.nextLine();
+              System.out.print("Enter file name, or quit to quit: ");
+              name = sc.nextLine();
            }
     }
 }

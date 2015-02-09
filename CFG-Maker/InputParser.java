@@ -28,13 +28,16 @@ public class InputParser
         for (int i = 0; i < fileDump.size(); i++)
         {
             row = fileDump.get(i);
-            while (!fileDump.get(i).equals(""))
+            row = row.replaceAll(" ", "");
+            //System.out.println(row);
+            
+            while (!row.equals(""))
             {
                 CodeByte current = new CodeByte(addrCount, 
-                            Integer.parseInt(row.substring(0, row.indexOf(" ")), 16));
+                            Integer.parseInt(row.substring(0, 2), 16));
                 program.add(current);
-                row = row.substring(row.indexOf(" "), row.length());
-                addrCount++;             
+                row = row.substring(2, row.length());
+                addrCount++;            
             }
         }
         

@@ -10,13 +10,13 @@ public class ByteMap
 {
     // instance variables - replace the example below with your own
     private ArrayList<String> hexList;
-    private ArrayList<CodeByte> codeBytes;
+    private ArrayList<CodeByteDbg> codeBytes;
     private String hexDump;
 
     /**
      * Constructor for objects of class ByteMap
      */
-    public ByteMap(List<String> program, ArrayList<CodeByte> bytes)
+    public ByteMap(List<String> program, ArrayList<CodeByteDbg> bytes)
     {
         codeBytes = bytes;
         hexList = new ArrayList<String>();
@@ -56,7 +56,7 @@ public class ByteMap
         }
     }
     
-    public ArrayList<CodeByte> getCodeBytes()
+    public ArrayList<CodeByteDbg> getCodeBytes()
     {
         return codeBytes;
     }

@@ -27,4 +27,17 @@ public class Program
     {
         return bytes;
     }
+    
+    public String toString()
+    {
+        String toRet = "";
+        for (int i = 0; i < bytes.size(); i++)
+        {
+            toRet += bytes.get(i).toString() + "\n";
+        }
+        
+        
+        
+        return toRet;
+    }
 }

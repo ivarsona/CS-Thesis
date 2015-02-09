@@ -7,27 +7,29 @@ import java.util.ArrayList;
  */
 public class ProgramRunThrough
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private ArrayList<ConcIns> insList;
 
     /**
      * Constructor for objects of class ProgramRunThrough
      */
     public ProgramRunThrough()
     {
-        // initialise instance variables
-        x = 0;
+        insList = new ArrayList<ConcIns>();
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Add instruction
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  ins the instruction 
      */
-    public int sampleMethod(int y)
+    public void addInstruction(ConcIns ins)
     {
-        // put your code here
-        return x + y;
+        insList.add(ins);
     }
+    
+    public String toString()
+    {
+        return insList.toString();
+    }
+
 }

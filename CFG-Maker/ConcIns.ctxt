@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=op\ dataStuff\ dis
+comment0.target=ConcIns(int,\ java.util.ArrayList,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ConcIns\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+numComments=2

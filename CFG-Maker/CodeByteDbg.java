@@ -65,7 +65,7 @@ public class CodeByteDbg
     
     public boolean isMovOP()
     {
-        if (opcode.equals(Disassembler.MOVOP))
+        if (opcode.equals(DisassemblerOLD.MOVOP))
             return true;
         else
             return false;
@@ -73,7 +73,7 @@ public class CodeByteDbg
     
     public boolean isJMPOP()
     {
-        if (opcode.equals(Disassembler.JUMPOP))
+        if (opcode.equals(DisassemblerOLD.JUMPOP))
             return true;
         else
             return false;

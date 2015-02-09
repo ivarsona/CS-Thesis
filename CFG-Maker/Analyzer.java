@@ -20,7 +20,7 @@ public class Analyzer
         //checkForControlFlow(map.CodeBytes(), map);
     }
     
-    private static void setAllUnvisited(ArrayList<CodeByte> bytes)
+    private static void setAllUnvisited(ArrayList<CodeByteDbg> bytes)
     {
          for (int i = 0; i < bytes.size(); i++)
         {
@@ -28,7 +28,7 @@ public class Analyzer
         }
     }
     
-    private static void checkForWrites(ArrayList<CodeByte> bytes, ByteMap map)
+    private static void checkForWrites(ArrayList<CodeByteDbg> bytes, ByteMap map)
     {
         for (int i = 0; i < bytes.size(); i++)
         {
@@ -47,10 +47,10 @@ public class Analyzer
                 ByteMap newMap = new ByteMap(map, decLocInt, value);
                        
                 ArrayList<String> newDisAsm = (ArrayList<String>) 
-                                             Disassembler.DisAsmFromHexDump(newMap.getHexDump());
+                                             DisassemblerOLD.DisAsmFromHexDump(newMap.getHexDump());
                 
                 System.out.println("NEW DISASSEMBLY AFTER RE-WRITING:\n" + newDisAsm);
-                ArrayList<CodeByte> newBytes = new ArrayList<CodeByte>();
+                ArrayList<CodeByteDbg> newBytes = new ArrayList<CodeByteDbg>();
                 for (int j = 0; j < newDisAsm.size(); j++)
                 {
                     String currentLine = newDisAsm.get(j);
@@ -58,7 +58,7 @@ public class Analyzer
                     String address = currentLine.substring(0, currentLine.indexOf(":"));
                     String disassembly = currentLine;
                     String opcode = instruction.substring(0, instruction.indexOf(" "));
-                    newBytes.add(new CodeByte(address, instruction, disassembly, opcode));
+                    newBytes.add(new CodeByteDbg(address, instruction, disassembly, opcode));
                 }
                
                 System.out.println("NEW CODEBYTES:");
@@ -72,7 +72,7 @@ public class Analyzer
         }
     }
     
-    private static void checkForControlFlow(ArrayList<CodeByte> bytes, ByteMap map)
+    private static void checkForControlFlow(ArrayList<CodeByteDbg> bytes, ByteMap map)
     {
         for (int i = 0; i < bytes.size(); i++)
         {

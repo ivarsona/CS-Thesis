@@ -40,7 +40,7 @@ public class CodeByte
     
     public String toString()
     {
-        String toRet = "Address: " + address + "Possible Values: ";
+        String toRet = "Address: " + address + " Possible Values: ";
         for (int i = 0; i < values.size(); i++)
         {
             toRet += values.get(i) + ", ";
