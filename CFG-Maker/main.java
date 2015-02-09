@@ -38,7 +38,10 @@ public class main
                   Program p = InputParser.parseProgram(name);
                   System.out.println(p); 
                   
+                  System.out.println("---Calculating CodeByte Variants---\n\n");
                   AMBAlgorithm.calcByteVals(p, inSet);
+                  
+                  System.out.println("---CodeByte Variants:\n");
                   System.out.println(p);
                   
                   

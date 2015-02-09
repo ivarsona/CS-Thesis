@@ -23,13 +23,13 @@ public class AMBAlgorithm
                 int opcode = p.getBytes().get(i).getValues().get(j);
                 stepper = inSet.getNumBytesFromOpcode(opcode);
                 String current = opcode + " ";
-                current += p.getBytes().get(i+1).getValues().get(j);
+                current += p.getBytes().get(i+1).getValues().get(0);
                 
                 if (stepper == 3)
                 {
-                    current += p.getBytes().get(i+2).getValues().get(j);
+                    current += " " + p.getBytes().get(i+2).getValues().get(0);
                 }
-                System.out.println(current);
+                //System.out.println(current);
                 AbstractInstruction abs = inSet.getAbstractSyntaxFromOP(opcode);
                 if (abs == AbstractInstruction.WRITECONST)
                 {
@@ -57,9 +57,40 @@ public class AMBAlgorithm
                 
                     }
                 }
+                else if (abs == AbstractInstruction.GOTOCONST)
+                {
+                }
+                else if (abs == AbstratInstruction.GOTOREL)
+                {
+                }
                 else
                 {}
             }
         }
     }
+    
+    
+    public static ArrayList<ProgramRunThrough> generateAllRuns(Program p, InstructionSet inSet)
+    {
+        int opcode;
+        ArrayList<Integer> data = new ArrayList<Integer>();
+        
+        ArrayList<ProgramRunThrough> allRuns = new ArrayList<ProgramRunThrough>();
+        
+        ArrayList<CodeByte> bytes = p.getBytes();
+        
+        ProgramRunThrough current = new ProgramRunThrough();
+        
+        
+        
+        
+        
+        
+        
+        
+        return allRuns;        
+    }
+    
+    
+    
 }

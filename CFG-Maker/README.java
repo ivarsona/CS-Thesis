@@ -1,5 +1,8 @@
 
 /**
+ * THIS IS HORRIBLY OUT OF DATE I'LL UPDATE IT LATER
+ * 
+ * 
  * TO USE:
  * 
  * Write binary file with spaces between each byte, and a newLine between 
