@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class InputParser
 {
-    public static ArrayList<CodeByte> parseProgram(String name)
+    public static Program parseProgram(String name)
     {
         ArrayList<String> fileDump = new ArrayList<String>();
         Path path = FileSystems.getDefault().getPath(name);
@@ -38,6 +38,7 @@ public class InputParser
             }
         }
         
-        return program;
+        Program p = new Program(program);
+        return p;
     }
 }
