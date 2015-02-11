@@ -7,6 +7,85 @@ import java.util.ArrayList;
  */
 public class AMBAlgorithm
 {
+    /**
+     * Takes an arraylist of Codebytes that represents a set of data bits for an instruction.
+     * 
+     * Using the size of the list of codebytes, it returns a list of a list of integers.
+     * The outermost list represents all possible combinations of the codebyte values.
+     * The innter lists are the specific combinations
+     * 
+     */     
+    private static ArrayList<ArrayList<Integer>> getDataBits(ArrayList<CodeByte> bytes)
+    {
+        ArrayList<ArrayList<Integer>> toRet = new ArrayList<ArrayList<Integer>>();
+        switch (bytes.size())
+        {
+            case 1:
+            {
+              for (int i = 0; i < bytes.get(0).getValues().size(); i++)
+                    toRet.add(new ArrayList<Integer>(bytes.get(0).getValues().get(i)));  
+            };
+            case 2:
+            {
+                ArrayList<Integer> current = new ArrayList<Integer>();
+                current.add(0);
+                current.add(0);
+                for (int i = 0; i < bytes.get(0).getValues().size(); i++)
+                {
+                    for (int j = 0; j < bytes.get(1).getValues().size(); j++)
+                    {
+                        current.set(0, bytes.get(0).getValues().get(i));
+                        current.set(1, bytes.get(1).getValues().get(j));
+                        toRet.add(new ArrayList<Integer>(current));
+                    }
+                }
+            };
+            case 3:
+            {
+                ArrayList<Integer> current = new ArrayList<Integer>();
+                current.add(0);
+                current.add(0);
+                current.add(0);
+                for (int i = 0; i < bytes.get(0).getValues().size(); i++)
+                {
+                    for (int j = 0; j < bytes.get(1).getValues().size(); j++)
+                    {
+                        for (int k = 0; k < bytes.get(2).getValues().size(); k++)
+                        {
+                            current.set(0, bytes.get(0).getValues().get(i));
+                            current.set(1, bytes.get(1).getValues().get(j));
+                            current.set(2, bytes.get(2).getValues().get(k));
+                            toRet.add(new ArrayList<Integer>(current));
+                        }
+                    }
+                }
+            };
+            default:
+            {}
+        }   
+        return toRet;
+    }
+    
+    /**
+     * Given:
+     * A base address, an opcode, a list of CodeBytes, and an instruction set, this function:
+     * 
+     * Produces an InstructionByte which encapsulates all possible disassemblies of the given opcode
+     * with the data codebytes.
+     */
+      
+    private static InstructionByte parseDataBits(int baseAddr, int opcode, ArrayList<CodeByte> bytes)
+    {
+        InstructionByte ins = new InstructionByte(baseAddr);
+        ArrayList<ArrayList<Integer>> allData = getDataBits(bytes);
+        for (int i = 0; i < allData.size(); i++)
+        {
+            ins.addInstruction(new ConcIns(opcode, allData.get(i)));
+        }
+        return ins;
+    }
+    
+    
     
     /**
      * Recursively goes through the algorithm
