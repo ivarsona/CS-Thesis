@@ -43,7 +43,7 @@ public class CodeByte
         visited = false;
     }
     
-    public boolean visisted()
+    public boolean visited()
     {
         return visited;
     }
@@ -77,10 +77,13 @@ public class CodeByte
         {
             toRet += values.get(i) + ", ";
         }
-        toRet += "\nTargets: ";
-        for (int i = 0; i < targets.size(); i++)
+        if (!targets.isEmpty())
         {
-            toRet += targets.get(i) + ", ";
+            toRet += "\nTargets: ";
+            for (int i = 0; i < targets.size(); i++)
+            {
+                toRet += targets.get(i) + ", ";
+            }
         }
         return toRet;
     }

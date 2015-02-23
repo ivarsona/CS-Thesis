@@ -32,6 +32,7 @@ public class AMB
         int newAmountOfData = oldAmountOfData;
         do
         {
+            p.markAllUnvisited();
             oldAmountOfData = newAmountOfData;
             System.out.println("In the outer loop");
             recurse(0);
@@ -60,6 +61,11 @@ public class AMB
     {
         if (begin >= p.getBytes().size())
             return;
+            
+        if (p.getBytes().get(begin).visited())
+            return;
+        
+        p.getBytes().get(begin).markVisited();
         for (int i = 0; i < p.getBytes().get(begin).getValues().size(); i++)
         {
             handleInstruction(begin, p.getBytes().get(begin).getValues().get(i));

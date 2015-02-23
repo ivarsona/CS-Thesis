@@ -18,11 +18,18 @@ public class Program
         bytes = cb;
     }
 
-    public void markAllUnvisited()
+    public void markAllVisited()
     {
         for (int i = 0; i < bytes.size(); i++)
         {
             bytes.get(i).markVisited();
+        }
+    }
+    public void markAllUnvisited()
+    {
+        for (int i = 0; i < bytes.size(); i++)
+        {
+            bytes.get(i).markUnvisited();
         }
     }
     /**

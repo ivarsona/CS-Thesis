@@ -1,0 +1,12 @@
+01 01		0x0: inc 01
+02 06		0x2: jmp 06
+01 01		0x4: inc 01
+00 0b 03	0x6: movb 0b 03
+02 00		0x9: jmp 00
+00 10 0a	0xb: movb 10 0a
+02 09		0xe: jmp 09
+01 01		0x10: inc 01
+01 01		0x12: inc 01
+
+inc reg1 --> jumps to 0x6 --> rewrites byte 3 to b --> jumps to beginning
+--> inc reg1 --> jumps to b --> rewrites a to e --> jumps to 9 --> jumps to e
