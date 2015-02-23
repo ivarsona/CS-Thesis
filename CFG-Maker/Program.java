@@ -18,6 +18,13 @@ public class Program
         bytes = cb;
     }
 
+    public void markAllUnvisited()
+    {
+        for (int i = 0; i < bytes.size(); i++)
+        {
+            bytes.get(i).markVisited();
+        }
+    }
     /**
      * Gets the list of codebytes
      * 

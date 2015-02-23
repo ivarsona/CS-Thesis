@@ -10,6 +10,7 @@ public class CodeByte
     private boolean visited;
     private int address;
     private ArrayList<Integer> values;
+    private ArrayList<Integer> targets;
 
     /**
      * Constructor for objects of class CodeBytes
@@ -20,8 +21,18 @@ public class CodeByte
         address = add;
         values = new ArrayList<Integer>();
         values.add(val);
+        targets = new ArrayList<Integer>();
     }
 
+    public void addTarget(int addr)
+    {
+        targets.add(addr);
+    }
+    
+    public ArrayList<Integer> getTargets()
+    {
+        return targets;
+    }
     public void markVisited()
     {
         visited = true;
@@ -54,12 +65,22 @@ public class CodeByte
        return values;
     }
     
+    public boolean notATarget(int addr)
+    {
+        return !targets.contains(addr);
+    }
+    
     public String toString()
     {
         String toRet = "Address: " + address + " Possible Values: ";
         for (int i = 0; i < values.size(); i++)
         {
             toRet += values.get(i) + ", ";
+        }
+        toRet += "\nTargets: ";
+        for (int i = 0; i < targets.size(); i++)
+        {
+            toRet += targets.get(i) + ", ";
         }
         return toRet;
     }
