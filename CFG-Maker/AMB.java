@@ -28,17 +28,15 @@ public class AMB
     
     public void analyze()
     {
-        int oldAmountOfData = 0;
-        
-        for (int i = 0; i < p.getBytes().size(); i++)
-        {
-            oldAmountOfData += p.getBytes().get(i).getValues().size();
-        }
+        int oldAmountOfData = getAmountOfData();
         int newAmountOfData = oldAmountOfData;
         do
         {
+            oldAmountOfData = newAmountOfData;
+            System.out.println("In the outer loop");
             recurse(0);
             newAmountOfData = getAmountOfData();
+
         } while (newAmountOfData > oldAmountOfData);
         
         
