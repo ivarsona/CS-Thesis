@@ -72,17 +72,17 @@ public class CodeByte
     
     public String toString()
     {
-        String toRet = "Address: " + address + " Possible Values: ";
+        String toRet = "Address: " + Integer.toHexString(address) + " Possible Values: ";
         for (int i = 0; i < values.size(); i++)
         {
-            toRet += values.get(i) + ", ";
+            toRet += Integer.toHexString(values.get(i)) + ", ";
         }
         if (!targets.isEmpty())
         {
             toRet += "\nTargets: ";
             for (int i = 0; i < targets.size(); i++)
             {
-                toRet += targets.get(i) + ", ";
+                toRet += Integer.toHexString(targets.get(i)) + ", ";
             }
         }
         return toRet;
