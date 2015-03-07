@@ -34,7 +34,7 @@ public class AMB
         {
             p.markAllUnvisited();
             oldAmountOfData = newAmountOfData;
-            System.out.println("In the outer loop");
+//            System.out.println("In the outer loop");
             recurse(0);
             newAmountOfData = getAmountOfData();
 
@@ -97,7 +97,7 @@ public class AMB
             int target = base+3;
             if (target >= p.getBytes().size())
             {
-                System.out.println("End of program reached");
+  //              System.out.println("End of program reached");
             }
             else
             {
@@ -117,10 +117,10 @@ public class AMB
                    }
                 
             }
-            int target = base+3;
+            int target = base+inSet.getNumBytesFromOpcode(op);
             if (target >= p.getBytes().size())
             {
-                    System.out.println("End of program reached");
+    //                System.out.println("End of program reached");
             }
             else
             {
@@ -163,7 +163,7 @@ public class AMB
             int target = base + inSet.getNumBytesFromOpcode(op);
             if (target >= p.getBytes().size())
             {
-                System.out.println("End of program reached");
+      //          System.out.println("End of program reached");
             }
             else
             {

@@ -15,7 +15,7 @@ public class main
            String name = "blahhhh";
            System.out.println("Welcome to the CFG Maker (someday...)");
            System.out.println("The current instruction set is:\n\n");
-           InstructionSet inSet = InstructionSetParser.parseInstructionSet("InstrSet0.txt");
+           InstructionSet inSet = InstructionSetParser.parseInstructionSet("InstructionSets/InstrSet0.txt");
            System.out.println("\n\n");
            System.out.print("Enter file name, new to change instruction sets, or quit to quit: ");
            //System.out.println(inSet);
@@ -36,13 +36,13 @@ public class main
               else
               {
                   Program p = InputParser.parseProgram(name);
-                  System.out.println(p); 
+                    //                  System.out.println(p); 
                   
-                  System.out.println("---Calculating CodeByte Variants---\n\n");
-//                  AMBAlgorithm.calcByteVals(p, inSet);
-  //                ArrayList<InstructionByte> instr = AMBAlgorithm.recAlgorithm(p, inSet);
-    //              System.out.println("---CodeByte Variants:\n");
-      //            System.out.println(p);
+                     //                System.out.println("---Calculating CodeByte Variants---\n\n");
+                    //                  AMBAlgorithm.calcByteVals(p, inSet);
+                    //                ArrayList<InstructionByte> instr = AMBAlgorithm.recAlgorithm(p, inSet);
+                    //              System.out.println("---CodeByte Variants:\n");
+                  //            System.out.println(p);
                   AMB thing = new AMB(p, inSet);
                   thing.analyze();
                   System.out.println(thing.getProgram());

@@ -77,7 +77,8 @@ public class Instruction
      */
     public String toString()
     {
-        return "Name: " + name + ", opcode: " + opcode + ", number of bytes: " + number_of_bytes
+        return "Name: " + name + ", opcode: " + Integer.toHexString(opcode) 
+            + ", number of bytes: " + number_of_bytes
             + ", AbstractSyntax: " + absSyntax;
     }
 }
