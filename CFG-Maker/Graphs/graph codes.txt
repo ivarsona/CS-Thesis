@@ -1,0 +1,88 @@
+DOT GRAPH DOCUMENT FOR
+
+jumpModSimpleSet0.txt
+
+Assembly:
+00: INC 01
+02: JMP 06
+04: INC 01
+06: MOVB 04 03
+
+Binary: 010102060101000403
+
+GRAPH CODE:
+
+picture 1:
+
+digraph {
+{rank=same; node2; node5};
+node1[label="00: INC 01 | 01 01"];
+node2[label="02: JMP 06 | 02 06"];
+node3[label="06: MOVB 04 03 | 00 04 03"];
+node4[label = "04: INC 01 | 01 01"];
+node5[label = "02: JMP 03 | 02 03"] 
+node1 -> node2;
+node2 -> node4[label="never happens"];
+node4 -> node3[label="never happens"];
+node2 -> node5[label="03 = 04",color=blue];
+node3 -> node5[label="modify!",color=purple];
+	}
+
+
+picture 2:
+
+digraph g {
+{rank=same; instr0,byte00list,byte01list};
+instr0[label = "INC 01"];
+byte00[shape=box][style=filled,color=grey][label="00"];
+byte00list[shape=record][label="<f0> 01"];
+byte01[shape=box][style=filled,color=grey][label="01"];
+byte01list[shape=record][label="<f0> 01"];
+
+byte00 -> byte00list [color=blue];
+byte01 -> byte01list [color=blue];
+byte00 -> instr0 [style=dotted];
+byte01 -> instr0 [style=dotted];
+
+{rank=same; instr1,byte02list,byte03list};
+instr1[label = "JMP 06"];
+byte02[shape=box][style=filled,color=grey][label="02"];
+byte02list[shape=record][label="<f0> 02"];
+byte03[shape=box][style=filled,color=grey][label="03"];
+byte03list[shape=record][label="<f0> 06|<f0> 04"];
+
+byte02 -> byte02list [color=blue];
+byte03 -> byte03list [color=blue];
+byte02 -> instr1 [style=dotted];
+byte03-> instr1 [style=dotted];
+
+instr0 -> instr1[color=red];
+
+{rank=same; instr2,byte04list,byte05list};
+instr2[label = "INC 01"];
+byte04[shape=box][style=filled,color=grey][label="04"];
+byte04list[shape=record][label="<f0> 01"];
+byte05[shape=box][style=filled,color=grey][label="01"];
+byte05list[shape=record][label="<f0> 01"];
+byte04 -> byte04list [color=blue];
+byte05 -> byte05list [color=blue];
+byte04 -> instr2 [style=dotted];
+byte05 -> instr2 [style=dotted];
+
+{rank=same; instr3,byte06list,byte07list,byte08list};
+instr3[label = "MOVB 04 03"];
+byte06[shape=box][style=filled,color=grey][label="06"];
+byte06list[shape=record][label="<f0> 00"];
+byte07[shape=box][style=filled,color=grey][label="07"];
+byte07list[shape=record][label="<f0> 04"];
+byte08[shape=box][style=filled,color=grey][label="08"];
+byte08list[shape=record][label="<f0> 03"];
+byte06 -> byte06list [color=blue];
+byte07 -> byte07list [color=blue];
+byte08 -> byte08list [color=blue];
+byte06 -> instr3 [style=dotted];
+byte07 -> instr3 [style=dotted];
+byte08 -> instr3 [style=dotted];
+
+instr1 -> instr3;
+}
